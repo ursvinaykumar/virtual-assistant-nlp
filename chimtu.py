@@ -3,6 +3,7 @@ import pyttsx3
 import pywhatkit
 import datetime
 import wikipedia
+import webbrowser
 
 listener = sr.Recognizer()
 machine = pyttsx3.init()
@@ -57,6 +58,11 @@ def play_chimtu():
         info = wikipedia.summary(person, 1)
         print(info)
         talk(info)
+
+    elif 'open' in instruction:
+        website = instruction.replace('open', '').strip()
+        talk('Opening ' + website)
+        webbrowser.open('https://' + website)
 
     else:
         talk('Please repeat')

@@ -62,7 +62,7 @@ def play_chimtu():
     elif 'open' in instruction:
         website = instruction.replace('open', '').strip()
         talk('Opening ' + website)
-        webbrowser.open('https://' + website)
+        webbrowser.open('https://' + website + '.com')
 
     else:
         talk('Please repeat')
